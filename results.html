@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - LLM Bias Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            background-color: white;
+            padding: 0.5rem 3%;
+        }
+        .cityu-logo {
+            height: 50px;
+            width: auto;
+            margin-right: 20px;
+        }
+        nav {
+            flex: 1;
+        }
+        header {
+            background-color: white;
+            padding: 0;
+        }
+        nav > ul > li > a {
+            color: #1a3a5c;
+        }
+        nav > ul > li > a:hover {
+            background-color: rgba(26, 58, 92, 0.1);
+        }
+        nav > ul > li > a.active {
+            background-color: rgba(26, 58, 92, 0.15);
+            color: #1a3a5c;
+        }
+        .dropdown-menu {
+            background-color: white;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-menu li a {
+            color: #2c3e50;
+        }
+        .dropdown-menu li a:hover {
+            background-color: #f8f9fa;
+            color: #2d6a9f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <img src="./Images/cityu.jpg" alt="CityU Logo" class="cityu-logo">
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="./background.html">Background</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./background_biases.html">What Are Biases</a></li>
+                            <li><a href="./background_fairness.html">Why Fairness Matters</a></li>
+                            <li><a href="./background_focus.html">Gender and Race Focus</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./methodology.html">Methodology</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./methodology_overview.html">Overview</a></li>
+                            <li><a href="./methodology_hypotheses.html">Hypotheses</a></li>
+                            <li><a href="./methodology_models.html">Models Tested</a></li>
+                            <li><a href="./methodology_occupations.html">Occupations</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="./results.html" class="active">Results</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./results_gender.html">Gender Bias Analysis</a></li>
+                            <li><a href="./results_ethnicity.html">Ethnicity Bias Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./discovery.html">Discovery</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <section class="topic-title-section">
+            <div class="topic-title">
+                <h1>Results</h1>
+                <p>Summary of Our Findings</p>
+            </div>
+        </section>
+
+        <article class="content-section">
+            <p>This study provides empirical evidence that artificial intelligence image generation models can systematically code and replicate occupational stereotypes based on gender and race. In the four models tested (Gemini, Ideogram, Stable Diffusion and Microsoft Copilot), the benchmark output presets deep-planted social bias: for example, authoritative roles such as CEOs and police officers are given male whites, And nurses and other care roles are female by default. Copilot shows the most extreme case. The objects generated in all 25 basic images are white, which clearly shows that AI not only reflects historical bias, but also actively normalizes it into statistical facts.</p>
+            
+            <p>Intervention tests revealed that diversity prompting, while accessible and easy to implement, is neither reliable nor sufficient. No model achieved true proportional representation in either gender or race. Models most responsive to the diversity prompt — Gemini and Copilot — were simultaneously the most prone to overcorrection, swapping one dominant group for another rather than distributing representation equitably. Stable Diffusion, despite requiring the most technically detailed prompting, produced the most racially balanced post-prompt result — suggesting that prompt precision matters far more than vague diversity language.</p>
+            
+            <p>Most importantly, this study shows that the word "diverse" is not a pure neutral instruction. In view of a biased model, it functions as a trigger to shift weight toward a different end of an existing binary, leaving the underlying stereotyping mechanism entirely intact, and rendering Asian, Hispanic, South Asian, and other ethnic groups frequently invisible in the process. As Gupta et al. (2025) argued, addressing bias requires coordinated action at the data curation, model training, and output evaluation stages. Prompt-level intervention alone is not enough and this study shows it could possibly introduce new harms while creating a misleading illusion of equity.</p>
+        </article>
+
+        <div class="bottom-navigation">
+            <a href="./methodology.html" class="bottom-nav-button previous">Previous Methodology</a>
+            <a href="./discovery.html" class="bottom-nav-button next">Next Discovery</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>CS1102 Course Project 2025 2026 Semester B</p>
+            <p>Group Members Lam Kwong Hei 60171935 Lo Cheuk Kei 58526227 Ng Ka Long Ronnie 56227373</p>
+            <p>2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
