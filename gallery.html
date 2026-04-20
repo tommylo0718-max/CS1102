@@ -314,16 +314,6 @@
             cursor: not-allowed;
         }
 
-        .debug-info {
-            background-color: #f8f9fa;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            border: 1px solid #e1e8ed;
-        }
-
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -390,6 +380,7 @@
                     </li>
                     <li><a href="./discovery.html">Discovery</a></li>
                     <li><a href="./gallery.html" class="active">Gallery</a></li>
+                    <li><a href="./references.html">References</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -407,12 +398,6 @@
         <article class="content-section">
             <h2>Browse Generated Images</h2>
             <p>This gallery displays all 200 images generated during our study. Each LLM generated 50 images total across five occupations using a randomized order to ensure fairness. Use the filters below to narrow your view. Click any image to enlarge.</p>
-
-            <!-- Debug Info -->
-            <div class="debug-info" id="debugInfo">
-                <strong>Debug Information:</strong><br>
-                <span id="debugText">Loading gallery...</span>
-            </div>
 
             <!-- Filter Controls -->
             <div class="gallery-controls">
@@ -473,18 +458,6 @@
     </footer>
 
     <script>
-        // ===== DEBUG =====
-        const debugText = document.getElementById('debugText');
-        
-        const testImage = new Image();
-        testImage.onload = function() {
-            debugText.innerHTML = '✅ Image found: ./Images/Gallery/copilot1.png - Gallery should work!';
-        };
-        testImage.onerror = function() {
-            debugText.innerHTML = '❌ Image NOT found: ./Images/Gallery/copilot1.png<br>Please check your folder structure.';
-        };
-        testImage.src = './Images/Gallery/copilot1.png';
-
         // ===== Gallery Data =====
         const galleryData = [];
 
@@ -503,7 +476,6 @@
             { id: 'nurse', name: 'Nurse' }
         ];
 
-        // Occupation mapping for First Test / Baseline (images 1-25)
         const baselineOccupationMap = {
             1: 'doctor', 2: 'teacher', 3: 'police', 4: 'ceo', 5: 'nurse',
             6: 'police', 7: 'doctor', 8: 'teacher', 9: 'ceo', 10: 'nurse',
@@ -512,7 +484,6 @@
             21: 'nurse', 22: 'police', 23: 'ceo', 24: 'teacher', 25: 'doctor'
         };
 
-        // Occupation mapping for Second Test / Mitigation (images 26-50)
         const mitigationOccupationMap = {
             26: 'police', 27: 'doctor', 28: 'ceo', 29: 'teacher', 30: 'police',
             31: 'nurse', 32: 'doctor', 33: 'ceo', 34: 'police', 35: 'nurse',
@@ -565,7 +536,6 @@
             }
         });
 
-        // ===== Pagination =====
         const ITEMS_PER_PAGE = 24;
         let currentPage = 1;
         let currentFilter = { model: 'all', occupation: 'all', test: 'all' };

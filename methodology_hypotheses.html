@@ -47,6 +47,21 @@
             background-color: #f8f9fa;
             color: #2d6a9f;
         }
+        .reference-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e1e8ed;
+        }
+        .reference-section h3 {
+            color: #1a3a5c;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .reference-section p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +97,7 @@
                     </li>
                     <li><a href="./discovery.html">Discovery</a></li>
                     <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./references.html">References</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -99,10 +115,28 @@
         <article class="content-section">
             <h2>Our Hypotheses</h2>
             <p>Our study is designed to test whether the following hypotheses are supported.</p>
-            <p>H1: The models will exhibit gender bias and ethnic bias in the Baseline Test.</p>
-            <p>H2: The models will produce gender-based occupational stereotypes in the Baseline Test.</p>
-            <p>H3: The Mitigation Test will reduce gender and ethnic biases compared with the Baseline Test.</p>
-            <p>H4: Smaller LLMs will display stronger stereotypes and less stable behavior than larger LLMs.</p>
+            
+            <p><strong>H1:</strong> The models will exhibit gender bias and ethnic bias in the Baseline Test.</p>
+            <p><strong>H2:</strong> The models will produce gender-based occupational stereotypes in the Baseline Test.</p>
+            <p><strong>H3:</strong> The Mitigation Test will reduce gender and ethnic biases compared with the Baseline Test.</p>
+            <p><strong>H4:</strong> Smaller LLMs will display stronger stereotypes and less stable behavior than larger LLMs.</p>
+            <p><strong>H5:</strong> Prompt-based diversity interventions in text-to-image models will not yield proportional multi-racial representation, but will instead trigger an algorithmic overcorrection that replaces the baseline majority with a singular new dominant demographic.</p>
+        </article>
+
+        <article class="content-section">
+            <h2>Theoretical Basis of Hypotheses</h2>
+            
+            <h3>Theoretical basis of H1 and H2</h3>
+            <p>The assumption of universal demographic bias and specific occupational stereotypes has an intrinsic connection with the training method of generative architecture. In their comprehensive assessment of text-to-image models, Naik and Nushi (2023) proved that these systems not only reflect real-world demographic data, but also actively amplify historical bias. Since the model is based on unscreened training data, it mainly links authoritative concepts (such as CEO) with white men and nursing roles with women, so we assume that the baseline output will implicitly present these biased demographic and occupational binary oppositions.</p>
+            
+            <h3>Theoretical basis of H3</h3>
+            <p>Although the baseline model presents stereotypes by default, a clear prompt engineering can theoretically cover these potential paths. Friedrich et al. (2023) established that the generation model can "accept fairness instructions", proving that the addition of clear text requirements for diversity will force the text encoder of the model to sample from a wider, non-dominant population statistics cluster. Therefore, we assume that direct mitigation tips will reduce the baseline binary structure and produce a fairer demographic distribution.</p>
+            
+            <h3>Theoretical basis of H4</h3>
+            <p>This hypothesis explores the relationship between model scale, enterprise resources and security alignment. Ganguli et al. (2022) confirmed that large models usually perform more predictable in compliance with safety guardrails due to extensive reinforcement learning based on human feedback (RLHF) and strict enterprise alignment tests. Therefore, we assume that smaller or completely open-source image models that usually lack multi-million-dollar enterprise security fine-tuning protocols will show stronger and unrelied baseline stereotypes compared with tightly protected enterprise systems.</p>
+            
+            <h3>Theoretical basis of H5</h3>
+            <p>Hypothesis 5 is based on the literature on the recent evaluation of the effectiveness of prompt-level interventions. As Chen and Davis (2025) proved in their evaluation of text-to-image models, trying to eliminate stereotypes through hints often leads to models deviating from the expected goal, inadvertently establishing new demographic imbalances. Based on their observations of this positive effect, Hypothesis 5 proposes that the broad "diversity" instruction will not generate a real picture that reflects human diversity. On the contrary, it expects that the underlying structure of these models will be radically compensated by severely over-representing a single, different minority, eventually replacing one singularity with another.</p>
         </article>
 
         <div class="bottom-navigation">

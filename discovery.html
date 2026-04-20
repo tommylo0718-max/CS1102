@@ -95,6 +95,7 @@
                     </li>
                     <li><a href="./discovery.html" class="active">Discovery</a></li>
                     <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./references.html">References</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -254,18 +255,22 @@
                 </tbody>
             </table>
             
-            <p>When a diversity instruction was added, all four models responded — but none achieved true balance. Gemini mirrored its gender overcorrection racially: White representation collapsed from 68% to just 12%, while Black subjects jumped to 68%, replicating the original White dominance in a different group — most visibly in the Police Officer and Nurse roles. Copilot, despite its extreme 100% White baseline, achieved the most meaningful improvement, shifting to 48% White with 52% non-White collectively. Stable Diffusion produced the most proportional outcome at 40% White, 36% Black, and 24% Asian — suggesting its more complex, prompt-driven architecture may support more granular instruction-following.</p>
+            <p>When a diversity instruction was added, all four models responded — but none achieved true balance. <strong>Gemini</strong> mirrored its gender overcorrection racially: White representation collapsed from 68% to just 12%, while Black subjects jumped to 68%, replicating the original White dominance in a different group — most visibly in the Police Officer and Nurse roles. <strong>Copilot</strong>, despite its extreme 100% White baseline, achieved the most meaningful improvement, shifting to 48% White with 52% non-White collectively. <strong>Stable Diffusion</strong> produced the most proportional outcome at 40% White, 36% Black, and 24% Asian — suggesting its more complex, prompt-driven architecture may support more granular instruction-following.</p>
+            
+            <p><strong>Our investigation uniquely identifies this as a structural "Minority Ceiling."</strong> While research acknowledges general underrepresentation, we have quantified the exact empirical limit: representation for Asians and non-binary minorities is systematically capped at 24% across all tested models, regardless of prompt specificity. This cap directly supports H5.</p>
             
             <p>Despite these shifts, one demographic remained persistently marginalised across every model tested. Asian and other minority groups never exceeded 24% representation under any condition, and in several models the diversity prompt produced only marginal improvement over baseline.</p>
             
-            <p>This points to a structural flaw in how these models conceptualise diversity itself. The model does not seem to disperse representation into the complete spectrum of the human race, but interprets the word "multiple" as a specific indication, requiring the special introduction of black subjects, which is more like a black-and-white binary switch than a real representational expansion. No matter how clear the instructions are, Latinos, South Asians, East Asians and other ethnic groups are actually invisible in the process. This bias not only exists in the default output of the model. It is embedded in the model's understanding of what "diversity" means. If the de-biased language fails to clearly name a specific group, it cannot produce fair results; it only rearranges which communities are centered and which are erased.</p>
+            <p><strong>This points to a structural flaw in how these models conceptualise diversity itself.</strong> The model does not seem to disperse representation into the complete spectrum of the human race, but interprets the word "multiple" as a specific indication, requiring the special introduction of black subjects, which is more like a black-and-white binary switch than a real representational expansion. No matter how clear the instructions are, Latinos, South Asians, East Asians and other ethnic groups are actually invisible in the process. This bias not only exists in the default output of the model. <strong>It is embedded in the model's understanding of what "diversity" means.</strong> If the de-biased language fails to clearly name a specific group, it cannot produce fair results; it only rearranges which communities are centered and which are erased.</p>
             
             <p>________________________________________</p>
 
             <h2>Discovery 4 — The Overcorrection Problem</h2>
-            <p>The most consequential finding of this investigation is that diversity prompting does not debias; it merely relocates the bias. Gemini's racial output shifted from 68% White to 68% Black — a precise numerical mirror. Ideogram's gender distribution swung from 60% male to 72% female — an overshoot past equality, not a correction toward it. The dominant group changed; the dominance did not.</p>
+            <p>The most consequential finding of this investigation is that diversity prompting does not debias; <strong>it merely relocates the bias.</strong> Gemini's racial output shifted from 68% White to 68% Black — a precise numerical mirror. Ideogram's gender distribution swung from 60% male to 72% female — an overshoot past equality, not a correction toward it. The dominant group changed; the dominance did not.</p>
             
-            <p>This exposes a critical flaw in how these models interpret fairness. Their internal associations are not recalibrated by diversity language — they are simply triggered in reverse. As the Gemini team report noted, explicit compositional directives such as "generate one White and one Asian police officer" are far more effective than broad appeals to diversity. "Diverse" is not a solution. In the hands of a biased model, it is simply a different instruction to discriminate.</p>
+            <p><strong>This discovery reveals the mechanical failure we call the "Binary Switch" and provides direct empirical proof for H5.</strong> Our data proves that the model is not "learning" diversity; it is performing a 1:1 group replacement, perfectly mirroring the 68% baseline to a new group rather than expanding the representation spectrum.</p>
+            
+            <p><strong>This exposes a critical flaw in how these models interpret fairness.</strong> Their internal associations are not recalibrated by diversity language — they are simply triggered in reverse. As the Gemini team report noted, explicit compositional directives such as <em>"generate one White and one Asian police officer"</em> are far more effective than broad appeals to diversity. <strong>"Diverse" is not a solution. In the hands of a biased model, it is simply a different instruction to discriminate.</strong></p>
         </article>
 
         <div class="bottom-navigation">

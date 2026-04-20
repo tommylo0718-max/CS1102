@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Models Tested - LLM Bias Project</title>
+    <title>References - LLM Bias Project</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .header-wrapper {
@@ -47,18 +47,20 @@
             background-color: #f8f9fa;
             color: #2d6a9f;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
+        .references-list {
+            padding-left: 20px;
         }
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
+        .references-list li {
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
-        th {
-            background-color: #f2f2f2;
+        .references-list a {
+            color: #2d6a9f;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .references-list a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -82,7 +84,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="./methodology_overview.html">Overview</a></li>
                             <li><a href="./methodology_hypotheses.html">Hypotheses</a></li>
-                            <li><a href="./methodology_models.html" class="active">Models Tested</a></li>
+                            <li><a href="./methodology_models.html">Models Tested</a></li>
                             <li><a href="./methodology_occupations.html">Occupations</a></li>
                         </ul>
                     </li>
@@ -95,7 +97,7 @@
                     </li>
                     <li><a href="./discovery.html">Discovery</a></li>
                     <li><a href="./gallery.html">Gallery</a></li>
-                    <li><a href="./references.html">References</a></li>
+                    <li><a href="./references.html" class="active">References</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -105,62 +107,44 @@
     <main class="content-page">
         <section class="topic-title-section">
             <div class="topic-title">
-                <h1>Models Tested</h1>
-                <p>The Four LLM Systems We Evaluated</p>
+                <h1>References</h1>
+                <p>Academic Sources and Resources</p>
             </div>
         </section>
 
         <article class="content-section">
-            <h2>Models Tested</h2>
-            <p>We tested four LLM-based image generation systems, divided into two large models (Gemini and Copilot) and two small models (Ideogram and Stable Diffusion).</p>
-            
-            <h3>Model Attributes</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>Developer</th>
-                        <th>Released</th>
-                        <th>Architecture & Scale</th>
-                        <th>Primary Purpose</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Gemini</strong></td>
-                        <td>Google DeepMind</td>
-                        <td>2023</td>
-                        <td>Large multimodal model (text, image, code, audio); one of the largest publicly available foundation models</td>
-                        <td>General-purpose AI assistant with integrated image generation via Imagen backbone</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Microsoft Copilot</strong></td>
-                        <td>Microsoft and OpenAI</td>
-                        <td>2023</td>
-                        <td>Built on DALL·E 3 / GPT-Image-1 backend; enterprise-scale multimodal assistant</td>
-                        <td>Productivity-focused general assistant embedded across Microsoft 365 suite</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ideogram 3.0</strong></td>
-                        <td>Ideogram AI</td>
-                        <td>2023</td>
-                        <td>Mid-scale text-to-image diffusion model; founded by ex-Google Brain researchers</td>
-                        <td>Specialised image generation with particular strength in text rendering accuracy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Stable Diffusion 1.5</strong></td>
-                        <td>Stability AI / CompVis</td>
-                        <td>2022</td>
-                        <td>Open-source latent diffusion model; runs locally on consumer GPU hardware</td>
-                        <td>Specialised text-to-image generation; fully open-source and community-customisable</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>References</h2>
+            <ol class="references-list">
+                <li>
+                    Gupta, A., et al. (2025). BiasGym: Fantastic LLM biases and how to find (and remove) them. arXiv preprint arXiv:2508.08855.<br>
+                    <a href="https://arxiv.org/abs/2508.08855" target="_blank">https://arxiv.org/abs/2508.08855</a>
+                </li>
+                <li>
+                    Hitti, Y., et al. (2023). Targeting the source: Selective data curation for debiasing NLP models. In <em>Machine Learning and Knowledge Discovery in Databases</em> (pp. 3-19). Springer.<br>
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-43424-2_1" target="_blank">https://link.springer.com/chapter/10.1007/978-3-031-43424-2_1</a>
+                </li>
+                <li>
+                    Naik, R., & Nushi, B. (2023). Social biases through the text-to-image generation lens. <em>Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency</em>, 1505-1520.<br>
+                    <a href="https://doi.org/10.1145/3593013.3594096" target="_blank">https://doi.org/10.1145/3593013.3594096</a>
+                </li>
+                <li>
+                    Friedrich, F., Brack, M., Struppek, L., Hintersdorf, D., Schramowski, P., Luccioni, S., & Kersting, K. (2023). Fair diffusion: Instructing text-to-image generation models on fairness. <em>arXiv preprint arXiv:2302.10893</em>.<br>
+                    <a href="https://arxiv.org/abs/2302.10893" target="_blank">https://arxiv.org/abs/2302.10893</a>
+                </li>
+                <li>
+                    Ganguli, D., Lovitt, L., Jackson, J., Askell, A., Bai, Y., Chen, A., ... & Bowman, S. R. (2022). Predictability and surprise in large generative models. <em>Proceedings of the 2022 ACM Conference on Fairness, Accountability, and Transparency</em>, 1747-1764.<br>
+                    <a href="https://doi.org/10.1145/3531146.3533229" target="_blank">https://doi.org/10.1145/3531146.3533229</a>
+                </li>
+                <li>
+                    Chen, J., & Davis, M. (2025). Prompting away stereotypes? Evaluating bias in text-to-image models for occupations. <em>arXiv preprint arXiv:2509.00849</em>.<br>
+                    <a href="https://arxiv.org/abs/2509.00849" target="_blank">https://arxiv.org/abs/2509.00849</a>
+                </li>
+            </ol>
         </article>
 
         <div class="bottom-navigation">
-            <a href="./methodology_hypotheses.html" class="bottom-nav-button previous">Previous Hypotheses</a>
-            <a href="./methodology_occupations.html" class="bottom-nav-button next">Next Occupations</a>
+            <a href="./gallery.html" class="bottom-nav-button previous">Previous Gallery</a>
+            <a href="./quiz.html" class="bottom-nav-button next">Next Quiz</a>
         </div>
     </main>
 

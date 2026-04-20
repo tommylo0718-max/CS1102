@@ -63,6 +63,83 @@
             background-color: #f8f9fa;
             color: #2d6a9f;
         }
+        
+        /* Techniques List Styling */
+        .techniques-section {
+            margin-top: 30px;
+        }
+        .techniques-section h2 {
+            text-align: center;
+            color: #1a3a5c;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e1e8ed;
+            padding-bottom: 15px;
+        }
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .technique-category {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid;
+        }
+        .technique-category.html {
+            border-top-color: #e34c26;
+        }
+        .technique-category.css {
+            border-top-color: #264de4;
+        }
+        .technique-category.js {
+            border-top-color: #d4b300;
+        }
+        .technique-category h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .technique-category.html h3 {
+            color: #e34c26;
+        }
+        .technique-category.css h3 {
+            color: #264de4;
+        }
+        .technique-category.js h3 {
+            color: #b89c00;
+        }
+        .technique-category ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .technique-category li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e8ed;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .technique-category li:last-child {
+            border-bottom: none;
+        }
+        .technique-category li strong {
+            color: #1a3a5c;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 900px) {
+            .techniques-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,6 +175,7 @@
                     </li>
                     <li><a href="./discovery.html">Discovery</a></li>
                     <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./references.html">References</a></li>
                     <li><a href="./quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -119,7 +197,53 @@
             <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
             <h3>Group Members:</h3>
             <p>Lam Kwong Hei -- 60171935<br>Lo Cheuk Kei -- 58526227<br>Ng Ka long Ronnie -- 56227373</p>
-            <p>The purpose of our project is to compare gender and race biases across four large language models (LLMs).<br>Our primary objective is to determine whether such biases emerge during the use of LLMs.<br>In addition, we sought to evaluate whether modifying prompts could mitigate unfair or biased<br>outcomes when using these models.</p>
+            <p>The purpose of our project is to compare gender and race biases across four large language models (LLMs).<br>Our primary objective is to determine whether such biases emerge when LLMs are used.<br>In addition, we sought to evaluate whether modifying prompts could mitigate unfair or biased<br>outcomes when using these models.</p>
+        </article>
+
+        <article class="content-section techniques-section">
+            <h2>Web Development Techniques Demonstrated</h2>
+            <p style="text-align: center; margin-bottom: 10px; color: #6c757d;">The following techniques were applied across our 16 project files</p>
+            
+            <div class="techniques-grid">
+                <div class="technique-category html">
+                    <h3>HTML Techniques</h3>
+                    <ul>
+                        <li><strong>Semantic Page Structuring</strong>Utilized &lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;, and &lt;footer&gt; for meaningful document hierarchy</li>
+                        <li><strong>Complex Table Construction</strong>Built data tables with &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, colspan/rowspan, and &lt;caption&gt;</li>
+                        <li><strong>Interactive Form Elements</strong>Implemented &lt;form&gt;, &lt;input type="radio"&gt;, and linked &lt;label&gt; tags for quiz interface</li>
+                        <li><strong>Custom Data Attributes</strong>Leveraged data-filter, data-type, and data-global-index for dynamic DOM targeting</li>
+                        <li><strong>Nested Navigation Menus</strong>Constructed multi-level dropdown menus using nested unordered lists</li>
+                        <li><strong>Inline Error Handling</strong>Applied onerror attribute on &lt;img&gt; tags for fallback behavior</li>
+                    </ul>
+                </div>
+                
+                <div class="technique-category css">
+                    <h3>CSS Techniques</h3>
+                    <ul>
+                        <li><strong>Flexbox for Alignment</strong>Used display: flex with align-items, justify-content, and gap for responsive layouts</li>
+                        <li><strong>CSS Grid for Galleries</strong>Implemented grid-template-columns: repeat(auto-fill, minmax()) for fluid image grids</li>
+                        <li><strong>Responsive Media Queries</strong>Applied @media breakpoints at 768px and 480px for mobile optimization</li>
+                        <li><strong>Advanced Pseudo-Classes</strong>Utilized :hover, :active, :disabled, :nth-child(even), and :first-child</li>
+                        <li><strong>Smooth Transitions</strong>Created hover animations with transition and transform: translateY()</li>
+                        <li><strong>Fixed Positioning</strong>Used position: fixed for lightbox overlay and absolute for modal controls</li>
+                        <li><strong>Visual Enhancements</strong>Applied linear-gradient(), border-radius, and rgba() shadows</li>
+                    </ul>
+                </div>
+                
+                <div class="technique-category js">
+                    <h3>JavaScript Techniques</h3>
+                    <ul>
+                        <li><strong>Dynamic DOM Manipulation</strong>Used getElementById, querySelector, createElement, and innerHTML</li>
+                        <li><strong>Event Listener Management</strong>Attached handlers with addEventListener and inline onclick triggers</li>
+                        <li><strong>State Management</strong>Tracked application state with global variables (currentPage, currentFilter, score)</li>
+                        <li><strong>Advanced Array Methods</strong>Processed data with .forEach(), .filter(), and .slice() for pagination</li>
+                        <li><strong>Template Literals</strong>Generated dynamic HTML using ES6 template literals and interpolation</li>
+                        <li><strong>Keyboard Event Handling</strong>Enabled lightbox navigation with Escape, ArrowLeft, and ArrowRight keys</li>
+                        <li><strong>Form Default Prevention</strong>Used event.preventDefault() for single-page quiz experience</li>
+                        <li><strong>Algorithmic Pagination</strong>Calculated bounds with Math.ceil(), Math.max(), and Math.min()</li>
+                    </ul>
+                </div>
+            </div>
         </article>
 
         <div class="bottom-navigation">
