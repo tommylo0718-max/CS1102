@@ -51,8 +51,8 @@
         /* Quiz Specific Styles */
         .quiz-container {
             background-color: #ffffff;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 600px;
+            margin: 40px auto;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -60,14 +60,14 @@
 
         #question-counter {
             font-size: 0.9em;
-            color: #6c757d;
+            color: #333;
             margin-bottom: 10px;
         }
 
         #question-text {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
             color: #1a3a5c;
         }
 
@@ -89,20 +89,18 @@
         }
 
         .option-label input[type="radio"] {
-            margin-right: 12px;
+            margin-right: 10px;
             cursor: pointer;
         }
 
-        .quiz-button {
-            padding: 12px 24px;
+        button {
+            padding: 10px 15px;
             font-size: 1em;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
             margin-right: 10px;
-            font-weight: 500;
-            transition: all 0.2s ease;
         }
 
         #submit-btn {
@@ -142,9 +140,9 @@
 
         #feedback-area {
             margin-top: 20px;
-            padding: 15px;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 1.1em;
+            padding: 15px;
             border-radius: 4px;
         }
 
@@ -176,25 +174,14 @@
             color: #6c757d;
         }
 
-        .button-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-
         @media (max-width: 768px) {
             .quiz-container {
                 padding: 20px;
+                margin: 20px auto;
             }
             
             #question-text {
                 font-size: 1.1em;
-            }
-            
-            .quiz-button {
-                padding: 10px 18px;
-                font-size: 0.9em;
             }
         }
     </style>
@@ -258,10 +245,10 @@
                 <form id="quiz-form">
                     <div id="options-container"></div>
                     
-                    <div class="button-group">
-                        <button class="quiz-button" id="submit-btn" type="submit">Submit Answer</button>
-                        <button class="quiz-button" id="next-btn" type="button" onclick="loadNextQuestion()">Next Question</button>
-                        <button class="quiz-button" id="restart-btn" type="button" onclick="restartQuiz()">Restart Quiz</button>
+                    <div>
+                        <button id="submit-btn" type="submit">Submit Answer</button>
+                        <button id="next-btn" type="button">Next Question</button>
+                        <button id="restart-btn" type="button">Restart Quiz</button>
                     </div>
                 </form>
                 
@@ -270,4 +257,184 @@
         </article>
 
         <div class="bottom-navigation">
-            <a href="./references.html"
+            <a href="./references.html" class="bottom-nav-button previous">Previous References</a>
+            <a href="./index.html" class="bottom-nav-button next">Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>CS1102 Course Project 2025 2026 Semester B</p>
+            <p>Group Members Lam Kwong Hei 60171935 Lo Cheuk Kei 58526227 Ng Ka Long Ronnie 56227373</p>
+            <p>2026 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const quizData = [
+            {
+                question: "Which of the following best describes \"bias\" in Large Language Models (LLMs)?",
+                options: [
+                    "Random errors in predictions",
+                    "Systematic tendencies that favor or disadvantage certain groups",
+                    "Technical glitches in training data",
+                    "Differences in computational speed"
+                ],
+                correctAnswer: "Systematic tendencies that favor or disadvantage certain groups"
+            },
+            {
+                question: "What is a common source of gender and ethnicity bias in LLMs?",
+                options: [
+                    "Hardware limitations",
+                    "Overuse of mathematical models",
+                    "Training data reflecting societal stereotypes",
+                    "Lack of internet connectivity"
+                ],
+                correctAnswer: "Training data reflecting societal stereotypes"
+            },
+            {
+                question: "Which evaluation method is often used to detect bias in LLMs?",
+                options: [
+                    "Confusion matrices",
+                    "Prompt-based testing with demographic variations",
+                    "Hardware benchmarking",
+                    "Random sampling of outputs"
+                ],
+                correctAnswer: "Prompt-based testing with demographic variations"
+            },
+            {
+                question: "Why is bias in LLMs considered problematic?",
+                options: [
+                    "It reduces the model's computational efficiency",
+                    "It can reinforce harmful stereotypes and discrimination",
+                    "It makes the model slower to respond",
+                    "It prevents the model from generating creative text"
+                ],
+                correctAnswer: "It can reinforce harmful stereotypes and discrimination"
+            },
+            {
+                question: "Which of the following is an example of gender bias in LLM outputs?",
+                options: [
+                    "Associating men with leadership roles more often than women",
+                    "Misclassifying a sentence grammatically",
+                    "Producing longer responses for certain queries",
+                    "Using more technical jargon in answers"
+                ],
+                correctAnswer: "Associating men with leadership roles more often than women"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questionCounterEl = document.getElementById("question-counter");
+        const questionTextEl = document.getElementById("question-text");
+        const optionsContainerEl = document.getElementById("options-container");
+        const submitBtn = document.getElementById("submit-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const restartBtn = document.getElementById("restart-btn");
+        const feedbackArea = document.getElementById("feedback-area");
+
+        function loadQuestion() {
+            submitBtn.disabled = false;
+            submitBtn.style.display = "inline-block";
+            nextBtn.style.display = "none";
+            restartBtn.style.display = "none";
+            feedbackArea.innerHTML = "";
+            feedbackArea.className = "";
+            optionsContainerEl.innerHTML = "";
+
+            const currentQuestion = quizData[currentQuestionIndex];
+
+            questionCounterEl.innerText = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+            questionTextEl.innerText = currentQuestion.question;
+
+            currentQuestion.options.forEach((option, index) => {
+                const label = document.createElement("label");
+                label.className = "option-label";
+                
+                const radioInput = document.createElement("input");
+                radioInput.type = "radio";
+                radioInput.name = "quiz-option";
+                radioInput.value = option;
+                radioInput.id = `option${index}`;
+                radioInput.required = true;
+
+                label.appendChild(radioInput);
+                label.appendChild(document.createTextNode(option));
+                
+                optionsContainerEl.appendChild(label);
+            });
+        }
+
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="quiz-option"]:checked');
+            
+            if (!selectedOption) {
+                alert("Please select an answer before submitting.");
+                return;
+            }
+
+            const userAnswer = selectedOption.value;
+            const currentQuestion = quizData[currentQuestionIndex];
+
+            const allRadios = document.querySelectorAll('input[name="quiz-option"]');
+            allRadios.forEach(radio => radio.disabled = true);
+
+            submitBtn.disabled = true;
+            nextBtn.style.display = "inline-block";
+
+            if (userAnswer === currentQuestion.correctAnswer) {
+                feedbackArea.innerHTML = "Correct!";
+                feedbackArea.className = "correct";
+                score++;
+            } else {
+                feedbackArea.innerHTML = `Incorrect. The correct answer was: ${currentQuestion.correctAnswer}`;
+                feedbackArea.className = "incorrect";
+            }
+        }
+
+        function loadNextQuestion() {
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                questionCounterEl.innerText = "Quiz Complete!";
+                questionTextEl.innerText = "";
+                optionsContainerEl.innerHTML = `
+                    <div class="score-display">
+                        <div class="score-number">${score} / ${quizData.length}</div>
+                        <div class="score-text">Your Score</div>
+                    </div>
+                `;
+                submitBtn.style.display = "none";
+                nextBtn.style.display = "none";
+                restartBtn.style.display = "inline-block";
+                feedbackArea.innerHTML = "";
+                feedbackArea.className = "";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            
+            submitBtn.style.display = "inline-block";
+            restartBtn.style.display = "none";
+            
+            loadQuestion();
+        }
+
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            checkAnswer();
+        });
+
+        nextBtn.addEventListener('click', loadNextQuestion);
+        restartBtn.addEventListener('click', restartQuiz);
+
+        loadQuestion();
+    </script>
+</body>
+</html>
